@@ -25,13 +25,18 @@ function round2(v){return Math.round((v+Number.EPSILON)*100)/100}
 
 function unitValue(kind, time, shift, isNew){
   const D = window.CALC_DATA;
-  const factor = D.shift_factor[shift];
+  const factor = D.shift_factor[shift] ?? 1;
 
+  // Según el Excel original, SOLO estos conceptos son proporcionales al turno:
+  // salario base, paga extra, plus antigüedad y Plus Logistica/convenio.
+  // El resto de pluses mantienen la misma cuantía para todos los turnos.
   if(["salario","extra","antig"].includes(kind)){
     const base = (isNew ? D.new[time] : D.old[time])[kind];
     return base * factor;
   }
-  return (isNew ? D.fixed_new[kind] : D.fixed_old[kind]) * factor;
+
+  const fixed = (isNew ? D.fixed_new[kind] : D.fixed_old[kind]);
+  return kind === "Plus Logistica" ? fixed * factor : fixed;
 }
 
 document.getElementById("calc").addEventListener("click", ()=>{

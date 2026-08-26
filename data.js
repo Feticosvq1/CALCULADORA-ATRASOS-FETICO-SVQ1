@@ -50,7 +50,7 @@ window.CALC_DATA = {
     "Más 5 años": {
       "salario": 39.739,
       "extra": 10.28,
-      "antig": 1.32667
+      "antig": 1.380
     }
   },
   "shift_factor": {
