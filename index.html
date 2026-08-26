@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora de atrasos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="wrap header-inner">
+    <img src="logo.png" class="logo" alt="Fetico Sindicato Moderno">
+    <div class="header-title">
+      <div class="brand">CALCULADORA DE ATRASOS</div>
+      <div class="sub">Cálculo basado en el Excel original</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+<section class="card">
+  <h1>Calculadora de atrasos</h1>
+  <div class="selectors">
+    <label>Turno
+      <select id="turno">
+        <option value="">Selecciona turno</option>
+        <option>X1</option><option>X2</option><option>X3</option><option>X4</option>
+        <option>X5</option><option>X6</option><option>X7</option><option>X8</option>
+        <option>X9</option><option>X10</option>
+      </select>
+    </label>
+    <label>Tiempo en la empresa
+      <select id="tiempo">
+        <option value="">Selecciona antigüedad</option>
+        <option>Menos 1 año</option>
+        <option>Menos 2 años</option>
+        <option>Más 2 años</option>
+        <option>Más 3 años</option>
+        <option>Más 5 años</option>
+      </select>
+    </label>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Introduce las cantidades</h2>
+  <p class="help">Solo tienes que rellenar la columna <strong>Cantidad</strong>. Los importes del convenio se calculan automáticamente según el turno y la antigüedad.</p>
+  <table>
+    <thead><tr><th>Concepto</th><th>Cantidad</th><th>Antes convenio</th><th>Nuevo convenio</th><th>Diferencia</th></tr></thead>
+    <tbody id="rows"></tbody>
+    <tfoot><tr><th colspan="4">TOTAL ATRASOS</th><th id="total">—</th></tr></tfoot>
+  </table>
+  <button id="calc">CALCULAR</button>
+</section>
+
+<section class="card result" id="resultCard" hidden>
+  <h2>Resultado</h2>
+  <div id="result"></div>
+</section>
+</main>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
