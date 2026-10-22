@@ -1,64 +1,18 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Calculadora de atrasos</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora de Vacaciones · FETICO</title><link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <div class="wrap header-inner">
-    <img src="logo.png" class="logo" alt="Fetico Sindicato Moderno">
-    <div class="header-title">
-      <div class="brand">CALCULADORA DE ATRASOS</div>
-      <div class="sub">Cálculo basado en el Excel original</div>
-    </div>
-  </div>
-</header>
-
-<main class="wrap">
-<section class="card">
-  <h1>Calculadora de atrasos</h1>
-  <div class="selectors">
-    <label>Turno
-      <select id="turno">
-        <option value="">Selecciona turno</option>
-        <option>X1</option><option>X2</option><option>X3</option><option>X4</option>
-        <option>X5</option><option>X6</option><option>X7</option><option>X8</option>
-        <option>X9</option><option>X10</option>
-      </select>
-    </label>
-    <label>Tiempo en la empresa
-      <select id="tiempo">
-        <option value="">Selecciona antigüedad</option>
-        <option>Menos 1 año</option>
-        <option>Menos 2 años</option>
-        <option>Más 2 años</option>
-        <option>Más 3 años</option>
-        <option>Más 5 años</option>
-      </select>
-    </label>
-  </div>
-</section>
-
-<section class="card">
-  <h2>Introduce las cantidades</h2>
-  <p class="help">Solo tienes que rellenar la columna <strong>Cantidad</strong>. Salario base, paga extra, antigüedad y Plus Logistica/convenio son proporcionales al turno. El resto de pluses son fijos.</p>
-  <table>
-    <thead><tr><th>Concepto</th><th>Cantidad</th><th>Antes convenio</th><th>Nuevo convenio</th><th>Diferencia</th></tr></thead>
-    <tbody id="rows"></tbody>
-    <tfoot><tr><th colspan="4">TOTAL ATRASOS</th><th id="total">—</th></tr></tfoot>
-  </table>
-  <button id="calc">CALCULAR</button>
-</section>
-
-<section class="card result" id="resultCard" hidden>
-  <h2>Resultado</h2>
-  <div id="result"></div>
-</section>
-</main>
-<script src="data.js"></script>
-<script src="script.js"></script>
-</body>
-</html>
+<div class="topline"></div>
+<header><div class="logo">FETICO</div><div><small>HERRAMIENTA INFORMATIVA</small><h1>Calculadora de Vacaciones</h1><p class="subtitle">Añade tantos periodos de contrato como necesites</p></div></header>
+<main>
+<section class="hero"><div class="eyebrow">TOTAL DEL CÁLCULO</div><div class="big" id="totalRest">0 días</div><div class="stats"><div><span>VACACIONES GENERADAS</span><b id="totalEarned">0,00 días</b></div><div><span>REDONDEO TOTAL</span><b id="totalRounded">0 días</b></div><div><span>DÍAS DISFRUTADOS</span><b id="totalTaken">0 días</b></div></div></section>
+<div class="notice"><strong>Límite por año natural:</strong> la fecha fin de cada periodo no puede superar el 31 de diciembre del año de su fecha de inicio. Para calcular varios años, añade un periodo por cada tramo que necesites.</div>
+<div id="periods"></div>
+<div class="add-wrap"><button type="button" class="add-button" id="addPeriod">＋ Añadir periodo</button><span id="periodCount">1 periodo</span></div>
+<section class="card"><div class="section-title"><i>Σ</i><div><h2>Resumen total</h2><p>Se suman todos los periodos añadidos y se aplica el redondeo al total generado.</p></div></div><div class="breakdown" id="summary"></div></section>
+<footer>Calculadora orientativa basada en los días anuales de vacaciones por turno del Excel facilitado. Comprueba el resultado con el convenio aplicable.</footer>
+</main><script src="script.js"></script>
+</body></html>
